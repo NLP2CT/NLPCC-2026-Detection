@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>sharetask 静态站点</title>
+    <title>ShareTask 静态站点</title>
     <style>
       body {
         margin: 0;
@@ -18,24 +18,32 @@
         margin: 0 auto;
         padding: 56px 20px;
       }
-      .card {
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        border-radius: 14px;
-        padding: 22px 22px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      .hero {
+        background: linear-gradient(135deg, #0b5fff 0%, #6a5cff 45%, #7c3aed 100%);
+        color: #fff;
+        border-radius: 18px;
+        padding: 28px 24px;
+        box-shadow: 0 14px 30px rgba(11, 95, 255, 0.18);
+        position: relative;
+        overflow: hidden;
       }
-      h1 {
-        margin: 0 0 12px 0;
-        font-size: 28px;
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: -40px -80px auto auto;
+        width: 220px;
+        height: 220px;
+        background: rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        filter: blur(1px);
       }
-      p {
-        margin: 0 0 14px 0;
-        color: #333;
-      }
-      a {
-        color: #0b5fff;
-        text-decoration: none;
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        margin-bottom: 10px;
       }
       code {
         background: #f3f3f3;
@@ -43,20 +51,91 @@
         border-radius: 8px;
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       }
-      .hint {
-        color: #666;
+      .hero h1 {
+        margin: 0 0 10px 0;
+        font-size: 30px;
+        line-height: 1.25;
+      }
+      .hero p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.92);
+        max-width: 62ch;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 18px;
+      }
+      @media (min-width: 720px) {
+        .grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .card {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 14px;
+        padding: 18px 18px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        min-height: 120px;
+      }
+      .card h2 {
+        margin: 0 0 8px 0;
+        font-size: 16px;
+      }
+      .card p {
+        margin: 0;
+        color: #333;
         font-size: 14px;
+      }
+      .link {
+        color: #0b5fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .footer {
+        margin-top: 18px;
+        color: #666;
+        font-size: 13px;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <main class="wrap">
-      <div class="card">
-        <h1>sharetask 静态网站（GitHub Pages）</h1>
-        <p>这是一个用于启动部署的占位页面。你把真正的 `sharetask` 静态站点文件放进仓库后，GitHub Actions 会自动重新部署。</p>
-        <p class="hint">
-          接下来：在 GitHub 新建一个仓库（例如 <code>sharetask-website</code>），然后把本地推送上去即可。
+      <section class="hero" aria-label="ShareTask Hero">
+        <div class="brand">ShareTask</div>
+        <h1>一个更清晰的静态站点入口</h1>
+        <p>
+          这个页面用于演示并启动 GitHub Pages 自动部署。你把真实的 ShareTask 静态页面文件放入仓库根目录后，
+          会由 Actions 自动更新线上内容。
         </p>
+      </section>
+
+      <section class="grid" aria-label="Quick start">
+        <div class="card">
+          <h2>如何更新页面</h2>
+          <p>
+            直接修改/替换仓库根目录的 `index.html`（以及相关静态资源：`css/`、`js/`、`img/`）。
+          </p>
+        </div>
+        <div class="card">
+          <h2>自动部署</h2>
+          <p>
+            推送到 `main` 后会触发 workflow：`.github/workflows/pages.yml`，部署到 GitHub Pages。
+          </p>
+        </div>
+        <div class="card">
+          <h2>下一步</h2>
+          <p>
+            把你的 `sharetask` 静态网站内容拷贝进来即可。需要更复杂的构建流程（如 `npm run build`）也可以再扩展。
+          </p>
+        </div>
+      </section>
+
+      <div class="footer">
+        如果你看到 404：先确认仓库 `Settings -> Pages` 已启用为 `GitHub Actions`，再等待一次 Actions 部署完成。
       </div>
     </main>
   </body>
