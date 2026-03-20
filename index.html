@@ -83,36 +83,17 @@
       }
       .hero {
         background:
-          linear-gradient(135deg, rgba(11, 95, 255, 0.94) 0%, rgba(106, 92, 255, 0.92) 45%, rgba(124, 58, 237, 0.94) 100%),
+          linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
           url("img/banner_bg.webp");
-        background-size: cover, cover;
-        background-position: center, center;
-        background-repeat: no-repeat, no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         color: #fff;
         border-radius: 22px;
-        padding: 36px 26px;
+        padding: 40px 30px;
         box-shadow: var(--shadow);
         position: relative;
         overflow: hidden;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: -40px -80px auto auto;
-        width: 220px;
-        height: 220px;
-        background: rgba(255, 255, 255, 0.16);
-        border-radius: 999px;
-        filter: blur(1px);
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(520px 220px at 20% 0%, rgba(255, 255, 255, 0.22), transparent 60%),
-          radial-gradient(420px 180px at 90% 20%, rgba(255, 255, 255, 0.16), transparent 55%);
-        pointer-events: none;
       }
       .hero > * {
         position: relative;
@@ -164,7 +145,7 @@
       .hero-meta {
         margin-top: 14px;
         padding-top: 14px;
-        border-top: 1px solid rgba(255, 255, 255, 0.18);
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
       }
       .hero-location {
         font-weight: 800;
