@@ -406,7 +406,7 @@
       <div class="topbar-inner">
         <a class="brand-link" href="#" aria-label="NLPCC 2026">
           <img class="topbar-logo" src="img/logo.svg" alt="NLPCC 2026 logo" loading="eager" />
-          <span>NLPCC 2026 Task 6</span>
+          <span>NLPCC 2026 Share Task 6</span>
         </a>
         <div class="nav-links">
           <div class="nav-dropdown">
@@ -428,7 +428,7 @@
       <!-- English (default) -->
       <div id="content-en" class="content active">
         <section class="hero" aria-label="ShareTask Hero">
-          <div class="brand">NLPCC 2026 Share Task 6: The Second Evaluation on LLM-Generated Text Detection</div>
+          <div class="brand">NLPCC 2026 Share Task 6: The Second Shared Task on LLM-Generated Text Detection</div>
 
           <div class="hero-meta" aria-label="Conference schedule and registration">
             <div class="hero-location">Macau, China</div>
@@ -486,7 +486,7 @@
         <section class="section card" aria-label="Dataset">
           <h2>Dataset</h2>
           <p>
-            The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) open dataset (Chinese subset: continuation based on the first 25% of tokens). The test set will be released in the later stages of the competition for teams to verify the effectiveness of their methods and evaluate final performance. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
+            The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) dataset (Chinese subset: Complete 25 ratio). The test set will be released in the later stages of the competition for teams to verify the effectiveness of their methods and evaluate final performance. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
           </p>
           <h3>Training Set</h3>
           <p>
@@ -497,9 +497,38 @@
             The training data can be found at the following links:
           </p>
           <ul class="org-list">
-            <li>Google Drive: <a class="link" href="https://drive.google.com/drive/folders/1R5KiW7uwQ002dOE2expEYQLbzQ_gMr8j?usp=sharing" target="_blank" rel="noreferrer">Download Link</a></li>
             <li>Github: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data" target="_blank" rel="noreferrer">Data Folder</a></li>
           </ul>
+          <h3>Data Restrictions</h3>
+          <p>
+            To support the development of detection systems, participants are allowed to perform data processing and augmentation based on the provided training data, but no external additional new datasets may be introduced.
+          </p>
+          <h3>Evaluation Metrics</h3>
+          <p>
+            The official evaluation metric for this task is the macro-averaged F1-Score.
+          </p>
+        </section>
+
+        <section class="section card" aria-label="Submission and Evaluation">
+          <h2>Submission and Evaluation</h2>
+          <p>
+            The submission platform for this evaluation task (tentatively Alibaba Cloud Tianchi) will be launched one week before the release of the test data for Phase 1 evaluation (open evaluation, leaderboard verification); and subsequently Phase 2 evaluation (closed evaluation, final ranking). Specific details of the test result text are as follows:
+          </p>
+          <h3>1. Test Result File</h3>
+          <ul class="org-list">
+            <li>Your test result file must be a JSON file containing all samples.</li>
+            <li>Please ensure that the text and ID fields remain unchanged.</li>
+            <li>Each sample in the JSON file should contain the following fields: "ID", "text", and "label" (HWT: 0, LGT: 1, HLT: 2).</li>
+          </ul>
+          <h3>2. Code and Data</h3>
+          <ul class="org-list">
+            <li>The code folder should contain all the code required for data augmentation, data processing, model training, and model inference, as well as the complete dataset used to train the detector.</li>
+            <li>Please include a simple README.md and an environment configuration file (e.g., requirements.txt).</li>
+          </ul>
+          <h3>3. Technical Report</h3>
+          <p>
+            The technical report should describe in detail the methods used to solve the task. All solutions will be handled confidentially and deleted uniformly after the NLPCC 2026 conference.
+          </p>
         </section>
 
         <section class="section card" aria-label="Tentative Schedule">
@@ -658,6 +687,36 @@
             <li>Google Drive: <a class="link" href="https://drive.google.com/drive/folders/1R5KiW7uwQ002dOE2expEYQLbzQ_gMr8j?usp=sharing" target="_blank" rel="noreferrer">下载链接</a></li>
             <li>Github: <a class="link" href="https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data" target="_blank" rel="noreferrer">数据文件夹</a></li>
           </ul>
+          <h3>数据限制</h3>
+          <p>
+            为了支持检测系统的开发，允许参赛者在提供的训练数据基础上进行数据处理和增强，但不得引入外部额外的、新的数据集。
+          </p>
+          <h3>评估指标</h3>
+          <p>
+            本次任务的官方评估指标是宏平均 F1-Score (macro-averaged F1-Score)。
+          </p>
+        </section>
+
+        <section class="section card" aria-label="提交与评测">
+          <h2>提交与评测</h2>
+          <p>
+            本评测任务的提交平台（暂定为阿里云天池）将在测试数据发布前一周上线，进行第一阶段评测（开放评测，排行榜验证）；随后进行第二阶段评测（封闭评测，最终排名）。测试结果文本的具体细节如下：
+          </p>
+          <h3>1. 测试结果文件</h3>
+          <ul class="org-list">
+            <li>您的测试结果文件必须是一个包含所有样本的 JSON 文件。</li>
+            <li>请确保文本和 ID 字段保持不变。</li>
+            <li>JSON 文件中的每个样本应包含以下字段：“ID”、“text”和“label”（规则：HWT 为 0，LGT 为 1，HLT 为 2）。</li>
+          </ul>
+          <h3>2. 代码和数据</h3>
+          <ul class="org-list">
+            <li>代码文件夹应包含数据增强、数据处理、模型训练和模型推理所需的所有代码，以及用于训练检测器的完整数据集。</li>
+            <li>请附带一个简单的 README.md 和环境配置文件（如 requirements.txt）。</li>
+          </ul>
+          <h3>3. 技术报告</h3>
+          <p>
+            技术报告应详细描述用于解决任务的方法。所有方案都将保密处理，并在 NLPCC 2026 会议结束后统一删除（不存档）。
+          </p>
         </section>
 
         <section class="section card" aria-label="初步日程">
@@ -744,7 +803,7 @@
 }</code></pre>
           <pre><code>@article{tao2026toward,
   title={Toward Reliable Detection of LLM-Generated Texts: A Comprehensive Evaluation Framework with CUDRT},
-  author={Tao, Zhen and Chen, Yanfang and Xi, Dinghao Bureau, Li, Zhiyu and Xu, Wei},
+  author={Tao, Zhen and Chen, Yanfang and Xi, Dinghao and Li, Zhiyu and Xu, Wei},
   journal={ACM Transactions on Intelligent Systems and Technology},
   volume={17},
   number={2},
