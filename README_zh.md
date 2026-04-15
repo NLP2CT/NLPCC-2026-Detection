@@ -32,15 +32,13 @@
 
 **数据下载**
 
-训练数据可以在以下 Google Drive 或者 Github 文件夹链接中找到：
+训练数据可以在以下 Github 文件夹链接中找到：
 
-- Google Drive link: https://drive.google.com/drive/folders/1R5KiW7uwQ002dOE2expEYQLbzQ_gMr8j?usp=sharing
-- Github link: https://github.com/NLP2CT/NLPCC2025-Task1/tree/main/data
+- Github link: https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data
 
 **数据限制**
 
-- 为了支持检测系统的开发，允许参赛者基于提供的原始训练数据进行数据增强。不得引入任何外部额外新的数据。
-- 违反以上规则的参赛队伍将被取消最终成绩排名。
+- 为了支持检测系统的开发，允许参赛者基于提供的训练数据进行数据处理、增强，但不得引入任何外部额外新的数据集。
 
 **数据格式**
 
@@ -187,14 +185,16 @@
 
 - Bao, G., Zhao, Y., Teng, Z., Yang, L., & Zhang, Y. Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature. In The Twelfth International Conference on Learning Representations.
 - Hans, A., Schwarzschild, A., Cherepanova, V., Kazemi, H., Saha, A., Goldblum, M., ... & Goldstein, T. (2024, July). Spotting LLMs With Binoculars: Zero-Shot Detection of Machine-Generated Text. In International Conference on Machine Learning (pp. 17519-17537). PMLR.
-- Koike, R., Kaneko, M., & Okazaki, N. (2024, March). Outfox: Llm-generated essay detection through in-context learning with adversarially generated examples. In *Proceedings of the AAAI Conference on Artificial Intelligence* (Vol. 38, No. 19, pp. 21258-21266).
-- Zhu, B., Yuan, L., Cui, G., Chen, Y., Fu, C., He, B., ... & Gu, M. (2023, December). Beat llms at their own game: Zero-shot llm-generated text detection via querying chatgpt. In *Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing* (pp. 7470-7483).
-- Yu, X., Qi, Y., Chen, K., Chen, G., Yang, X., Zhu, P., ... & Yu, N. (2024). Dpic: Decoupling prompt and intrinsic characteristics for llm generated text detection. *Advances in Neural Information Processing Systems*, *37*, 16194-16212.
-- Hu, X., Chen, P. Y., & Ho, T. Y. (2023). Radar: Robust ai-text detection via adversarial learning. *Advances in neural information processing systems*, *36*, 15077-15095.
-- Yu, X., Chen, K., Yang, Q., Zhang, W., & Yu, N. (2024, November). Text fluoroscopy: Detecting LLM-generated text through intrinsic features. In *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing* (pp. 15838-15846).
-- Ma, S., & Wang, Q. (2024, November). Zero-shot detection of LLM-generated text using token cohesiveness. In *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing* (pp. 17538-17553).
-- Bao, G., Zhao, Y., He, J., & Zhang, Y. Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection. In *The Thirteenth International Conference on Learning Representations*.
-- Zhou, H., Zhu, J., Su, P., Ye, K., Yang, Y., Gavioli-Akilagun, S., & Shi, C. AdaDetectGPT: Adaptive Detection of LLM-Generated Text with Statistical Guarantees. In *The Thirty-ninth Annual Conference on Neural Information Processing Systems*.
+- Koike, R., Kaneko, M., & Okazaki, N. (2024, March). Outfox: Llm-generated essay detection through in-context learning with adversarially generated examples. In *Proceedings of the AAAI Conference on Artificial Intelligence* (Vol. 38, No. 19, pp. 21258-21266).
+- Zhu, B., Yuan, L., Cui, G., Chen, Y., Fu, C., He, B., ... & Gu, M. (2023, December). Beat llms at their own game: Zero-shot llm-generated text detection via querying chatgpt. In *Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing* (pp. 7470-7483).
+- Yu, X., Qi, Y., Chen, K., Chen, G., Yang, X., Zhu, P., ... & Yu, N. (2024). Dpic: Decoupling prompt and intrinsic characteristics for llm generated text detection. *Advances in Neural Information Processing Systems*, *37*, 16194-16212.
+- Hu, X., Chen, P. Y., & Ho, T. Y. (2023). Radar: Robust ai-text detection via adversarial learning. *Advances in neural information processing systems*, *36*, 15077-15095.
+- Yu, X., Chen, K., Yang, Q., Zhang, W., & Yu, N. (2024, November). Text fluoroscopy: Detecting LLM-generated text through intrinsic features. In *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing* (pp. 15838-15846).
+- Wang, P., Li, L., Ren, K., Jiang, B., Zhang, D., & Qiu, X. SeqXGPT: Sentence-Level AI-Generated Text Detection. In The 2023 Conference on Empirical Methods in Natural Language Processing.
+- Ma, S., & Wang, Q. (2024, November). Zero-shot detection of LLM-generated text using token cohesiveness. In *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing* (pp. 17538-17553).
+- Bao, G., Zhao, Y., He, J., & Zhang, Y. Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection. In *The Thirteenth International Conference on Learning Representations*.
+- Zhou, H., Zhu, J., Su, P., Ye, K., Yang, Y., Gavioli-Akilagun, S., & Shi, C. AdaDetectGPT: Adaptive Detection of LLM-Generated Text with Statistical Guarantees. In *The Thirty-ninth Annual Conference on Neural Information Processing Systems*.
+- Zhu, X., Ren, Y., Fang, F., Tan, Q., Wang, S., & Cao, Y. DNA-DetectLLM: Unveiling AI-Generated Text via a DNA-Inspired Mutation-Repair Paradigm. In *The Thirty-ninth Annual Conference on Neural Information Processing Systems*.
 
 ...
 

@@ -24,7 +24,7 @@ Following the success of the 1st Shared Task on LLM-Generated Text Detection (NL
 
 ## Dataset
 
-The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) open dataset (Chinese subset: continuation based on the first 25% of tokens). The test set will be released in the later stages of the competition for teams to verify the effectiveness of their methods and evaluate final performance. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
+The training set for this task is primarily sampled and adapted from the CUDRT (TIST 2026) dataset (Chinese subset: Complete 25 ratio). The test set will be released in the later stages of the competition for teams to verify the effectiveness of their methods and evaluate final performance. The evaluation dataset is extended and constructed based on the DetectRL benchmark (NeurIPS 2024) framework, containing multiple generation models and domain data to ensure the authenticity and challenge of the evaluation scenarios.
 
 **Training Set**
 
@@ -32,10 +32,9 @@ Contains data from 4 types of LLMs and 2 domains. Specifically, data sources inc
 
 **Data Download**
 
-The training data can be found at the following Google Drive or Github folder links:
+The training data can be found at the following Github folder link:
 
-- Google Drive link: https://drive.google.com/drive/folders/1R5KiW7uwQ002dOE2expEYQLbzQ_gMr8j?usp=sharing
-- Github link: https://github.com/NLP2CT/NLPCC2025-Task1/tree/main/data
+- Github link: https://github.com/NLP2CT/NLPCC-2026-Task6-Detection/tree/main/data
 
 **Data Restrictions**
 
@@ -191,10 +190,11 @@ If you are a new researcher in this field, we hope the following papers can help
 - Yu, X., Qi, Y., Chen, K., Chen, G., Yang, X., Zhu, P., ... & Yu, N. (2024). Dpic: Decoupling prompt and intrinsic characteristics for llm generated text detection. *Advances in Neural Information Processing Systems*, *37*, 16194-16212.
 - Hu, X., Chen, P. Y., & Ho, T. Y. (2023). Radar: Robust ai-text detection via adversarial learning. *Advances in neural information processing systems*, *36*, 15077-15095.
 - Yu, X., Chen, K., Yang, Q., Zhang, W., & Yu, N. (2024, November). Text fluoroscopy: Detecting LLM-generated text through intrinsic features. In *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing* (pp. 15838-15846).
+- Wang, P., Li, L., Ren, K., Jiang, B., Zhang, D., & Qiu, X. SeqXGPT: Sentence-Level AI-Generated Text Detection. In The 2023 Conference on Empirical Methods in Natural Language Processing.
 - Ma, S., & Wang, Q. (2024, November). Zero-shot detection of LLM-generated text using token cohesiveness. In *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing* (pp. 17538-17553).
 - Bao, G., Zhao, Y., He, J., & Zhang, Y. Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection. In *The Thirteenth International Conference on Learning Representations*.
 - Zhou, H., Zhu, J., Su, P., Ye, K., Yang, Y., Gavioli-Akilagun, S., & Shi, C. AdaDetectGPT: Adaptive Detection of LLM-Generated Text with Statistical Guarantees. In *The Thirty-ninth Annual Conference on Neural Information Processing Systems*.
-
+- Zhu, X., Ren, Y., Fang, F., Tan, Q., Wang, S., & Cao, Y. DNA-DetectLLM: Unveiling AI-Generated Text via a DNA-Inspired Mutation-Repair Paradigm. In *The Thirty-ninth Annual Conference on Neural Information Processing Systems*.
 ...
 
 ---
