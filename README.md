@@ -19,6 +19,7 @@ Following the success of the 1st Shared Task on LLM-Generated Text Detection (NL
 
 ## Latest News
 
+- [ 2025.05.08 ] 🔄 We have updated the dataset to unify the label "MGT" to "LGT" to match the documentation. No other changes were made. The original MGT in the training set is equivalent to LGT (label=2). We apologize for any inconvenience and confusion caused.
 - [ 2025.04.15 ] 💡 We have released the detailed task guidelines and training data ~
 - [ 2025.03.20 ] 🔥 Registration for NLPCC-2026 Task 6 is now open. Welcome to join us!
 
