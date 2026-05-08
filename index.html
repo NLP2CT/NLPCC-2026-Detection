@@ -623,10 +623,12 @@
           <h2>FAQ</h2>
           <p><strong>Q: Where can I register for this shared task? Can team registration be updated?</strong></p>
           <p>A: Fill out the following <a class="link" href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn" target="_blank" rel="noreferrer">link</a> to register. Before the registration deadline, you can fill out this link repeatedly to update team registration information.</p>
-          <p><strong>Q: Is there any restriction on the number of model parameters? If an ensemble approach is used, are there any constraints on the total number of parameters?</strong></p>
-          <p>A: NLPCC 2026 Share Task 6 places no restrictions on the number of parameters for a single model. Similarly, if an ensemble approach is adopted, there are no parameter constraints on the total number of parameters after ensemble.</p>
-          <p><strong>Q: The training set is sourced from news and academic writing, using four generation models. Will the subsequent test data also consist of these two sources and these four models, or will it be expanded?</strong></p>
-          <p>A: As stated in the README under the Dataset section, the test set will be constructed using out-of-distribution data from another dataset (DetectRL benchmark, NeurIPS 2024). It will no longer be limited to the news and academic domains or the four generation models covered in the training set. The test data may introduce texts from unknown domains and unknown generation models, including different data generation schemes, to conduct multi-dimensional stress testing and comprehensively evaluate the detector's actual performance in real-world application scenarios.</p>
+          <p><strong>Q: Is there any restriction on the number of model parameters or data augmentation methods? If an ensemble approach is used, are there any constraints on the total number of parameters?</strong></p>
+          <p>A: NLPCC 2026 Share Task 6 places no restrictions on the number of parameters for a single model, nor on the total number of parameters after ensemble. There are also no restrictions on data augmentation methods or models used. You may use open-source LLMs or closed-source APIs for text paraphrasing, rewriting, and other data-augmentation operations; these are fully allowed under the competition rules.</p>
+          <p><strong>Q: The training set is sourced from news and academic writing, using four generation models. Will the subsequent test data also consist of these two sources and these four models, or will it be expanded? What is the generation method for test data? Will it contain formatting artifacts (e.g., "\n") or incomplete texts?</strong></p>
+          <p>A: As stated in the README under the Dataset section, the test set will be constructed using out-of-distribution data from another dataset (DetectRL benchmark, NeurIPS 2024). It will no longer be limited to the news and academic domains or the four generation models covered in the training set. The test data may introduce texts from unknown domains and unknown generation models, including different data generation schemes, to conduct multi-dimensional stress testing and comprehensively evaluate the detector's actual performance in real-world application scenarios. Test-set LGT text may not use the same front-25%-token continuation as the training set; even if continuation is used, the prefix tokens will be cleaned, resulting in higher overall quality. The test set undergoes strict preprocessing and will not retain redundant formatting symbols such as "\n". It will also avoid abrupt text truncation, though it will not force every text to end with a period, preserving natural forms such as byline signatures to test real-world robustness.</p>
+          <p><strong>Q: Training data quality issues: some samples contain pure English text labeled as HLT; some end with "123" with preceding text identical to the human text; and the README mentions LGT while the dataset uses MGT. How should these be understood?</strong></p>
+          <p>A: The pure English samples labeled as HLT and the ~2,000 samples ending with "123" (with preceding text identical to the human text) are both native noise from the CUDRT dataset; no additional cleaning was performed. Teams are expected to design their own data-cleaning strategies. Regarding the label inconsistency: in the current training set, MGT is equivalent to LGT (label=2). We will update the dataset in a subsequent release to uniformly correct MGT to LGT, along with an official correction notice.</p>
         </section>
 
         <section class="section card" aria-label="References">
@@ -825,10 +827,12 @@
           <h2>常见问题 (FAQ)</h2>
           <p><strong>问：我可以在哪里报名参加这个共享任务？团队报名信息可以更新吗？</strong></p>
           <p>答：请填写以下<a class="link" href="https://alidocs.dingtalk.com/notable/share/form/v018K4nyeZ1wGK0YnLb_dv19yqvsgs3oebp3pcjys_bUfwzOn" target="_blank" rel="noreferrer">链接</a>进行报名。在报名截止日期之前，您可以重复填写此链接以更新团队报名信息。</p>
-          <p><strong>问：本次任务对模型参数量有没有限制？如果进行模型集成，对总参数量有没有要求？</strong></p>
-          <p>答：本次 NLPCC 2026 Share Task 6 任务对单模型参数量没有任何限制，同时若采用模型集成方案，对集成后的总参数量也无相关参数约束。</p>
-          <p><strong>问：训练集的数据来源是新闻和学术写作，所用为四种生成模型。后续测试数据中也是这两种来源和这四种模型吗，还是会扩充？</strong></p>
-          <p>答：正如 README 中【数据集】部分所述，测试集将采用另一个数据集的分布外数据（DetectRL 基准，NeurIPS 2024）扩展构建，不再局限于训练集所涵盖的新闻、学术领域以及四类生成模型。测试数据将可能引入未知领域文本与未知生成模型，包括不同的数据生成方案，进行多维度压力测试，从而全面客观地综合评估检测器在真实应用场景下的实际性能表现。</p>
+          <p><strong>问：本次任务对模型参数量、数据增强方法或所使用的模型是否有任何限制？如果进行模型集成，对总参数量有没有要求？</strong></p>
+          <p>答：本次 NLPCC 2026 Share Task 6 任务对单模型参数量没有任何限制，同时若采用模型集成方案，对集成后的总参数量也无相关参数约束。允许使用开源大模型、闭源 API 进行文本释义、改写等数据增强操作，此类操作完全符合比赛规则。</p>
+          <p><strong>问：训练集的数据来源是新闻和学术写作，所用为四种生成模型。后续测试数据中也是这两种来源和这四种模型吗，还是会扩充？测试数据是否采用与训练集相同的续写方式生成？是否会包含格式符号或不完整文本？</strong></p>
+          <p>答：正如 README 中【数据集】部分所述，测试集将采用另一个数据集的分布外数据（DetectRL 基准，NeurIPS 2024）扩展构建，不再局限于训练集所涵盖的新闻、学术领域以及四类生成模型。测试数据将可能引入未知领域文本与未知生成模型，包括不同的数据生成方案，进行多维度压力测试，从而全面客观地综合评估检测器在真实应用场景下的实际性能表现。测试集 LGT 文本不一定采用训练集同款前 25% token 续写方式；即便采用续写生成，也会对前置 token 做清洗，整体测试集质量更高。测试集会经过严格预处理清洗，不会保留 "\n" 等冗余格式符号。测试集基本不会出现文本突然中断的情况，但不会强制要求均以句号完整收尾，会保留如新闻末尾署名标注等现实场景自然存在的文本形式，用于检验模型真实鲁棒性。</p>
+          <p><strong>问：训练集中存在纯英文文本且标签为 HLT、约 2000 条以 "123" 结尾且前文与人类文本相同的样本，且 README 中标注为 LGT 而实际数据集为 MGT，这些应如何理解？</strong></p>
+          <p>答：训练集中出现的纯英文文本标签为 HLT 的样本，以及约 2000 条以 "123" 结尾、前文与人类文本重复的样本，均为 CUDRT 数据集原生噪声，我方未做额外清洗处理。数据清洗工作由各参赛队伍自行设计方案处理。关于标签不一致：训练集中的 MGT 即为 LGT（标签为 2），后续会更新数据集，将数据内的 MGT 统一修正为 LGT，并同步发布官方更正通知。</p>
         </section>
 
         <section class="section card" aria-label="参考文献">

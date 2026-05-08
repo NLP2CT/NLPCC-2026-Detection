@@ -137,15 +137,21 @@ A: Fill out the following link to register: https://alidocs.dingtalk.com/notable
 
 ---
 
-Q: Is there any restriction on the number of model parameters? If an ensemble approach is used, are there any constraints on the total number of parameters?
+Q: Is there any restriction on the number of model parameters or data augmentation methods? If an ensemble approach is used, are there any constraints on the total number of parameters?
 
-A: NLPCC 2026 Share Task 6 places no restrictions on the number of parameters for a single model. Similarly, if an ensemble approach is adopted, there are no parameter constraints on the total number of parameters after ensemble.
+A: NLPCC 2026 Share Task 6 places no restrictions on the number of parameters for a single model, nor on the total number of parameters after ensemble. There are also no restrictions on data augmentation methods or models used. You may use open-source LLMs or closed-source APIs for text paraphrasing, rewriting, and other data-augmentation operations; these are fully allowed under the competition rules.
 
 ---
 
-Q: The training set is sourced from news and academic writing, using four generation models. Will the subsequent test data also consist of these two sources and these four models, or will it be expanded?
+Q: The training set is sourced from news and academic writing, using four generation models. Will the subsequent test data also consist of these two sources and these four models, or will it be expanded? What is the generation method for test data? Will it contain formatting artifacts (e.g., "\n") or incomplete texts?
 
-A: As stated in the README under the Dataset section, the test set will be constructed using out-of-distribution data from another dataset (DetectRL benchmark, NeurIPS 2024). It will no longer be limited to the news and academic domains or the four generation models covered in the training set. The test data may introduce texts from unknown domains and unknown generation models, including different data generation schemes, to conduct multi-dimensional stress testing and comprehensively evaluate the detector's actual performance in real-world application scenarios.
+A: As stated in the README under the Dataset section, the test set will be constructed using out-of-distribution data from another dataset (DetectRL benchmark, NeurIPS 2024). It will no longer be limited to the news and academic domains or the four generation models covered in the training set. The test data may introduce texts from unknown domains and unknown generation models, including different data generation schemes, to conduct multi-dimensional stress testing and comprehensively evaluate the detector's actual performance in real-world application scenarios. Test-set LGT text may not use the same front-25%-token continuation as the training set; even if continuation is used, the prefix tokens will be cleaned, resulting in higher overall quality. The test set undergoes strict preprocessing and will not retain redundant formatting symbols such as "\n". It will also avoid abrupt text truncation, though it will not force every text to end with a period, preserving natural forms such as byline signatures to test real-world robustness.
+
+---
+
+Q: Training data quality issues: some samples contain pure English text labeled as HLT; some end with "123" with preceding text identical to the human text; and the README mentions LGT while the dataset uses MGT. How should these be understood?
+
+A: The pure English samples labeled as HLT and the ~2,000 samples ending with "123" (with preceding text identical to the human text) are both native noise from the CUDRT dataset; no additional cleaning was performed. Teams are expected to design their own data-cleaning strategies. Regarding the label inconsistency: in the current training set, MGT is equivalent to LGT (label=2). We will update the dataset in a subsequent release to uniformly correct MGT to LGT, along with an official correction notice.
 
 ---
 
