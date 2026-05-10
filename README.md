@@ -156,6 +156,12 @@ A: The pure English samples labeled as HLT and the ~2,000 samples ending with "1
 
 ---
 
+Q: Can we use pseudo-labeling on the test set data (i.e., running the test data through our model to obtain pseudo-labels and using them as expanded training data)?
+
+A: No, it is NOT allowed to use test set data for pseudo-labeling. You cannot add any test set samples with predicted pseudo-labels into your training data for model optimization. This practice is not applicable in real-world application scenarios, so we do not permit such operations in the competition. The official test set is strictly for final-submission evaluation only. Any form of using test set data for training, fine-tuning, pseudo-label construction, or data augmentation is considered a violation of the competition rules. You may only use the officially provided training set. Methods to expand the training set are limited to the announced legal data augmentation methods, and no new data sources may be explicitly introduced.
+
+---
+
 **References**
 
 The following are references related to this shared task. If your research uses relevant datasets, or if this task is helpful to you, please consider citing the following literature:
